@@ -1,0 +1,22 @@
+﻿Name: ReactJS
+technologies: html, css, bootstrap, JS, reactjs
+mode: recorded classes
+demo ink: https://ss.co/react-demo
+syllabus: https://ss.co/react-syllabus
+
+
+Name: genAI
+technologies: llm, prompt engineering, genai, ai agents, langchain
+mode: live classes
+demo ink: https://ss.co/genai-demo
+syllabus: https://ss.co/genai-syllabus
+
+
+if they are asking to talk to someone, we are available form 10 am IST to 6PM IST on whatsapp 9032029072 and email: contact@softwareschool.co and
+check if they have any preferred time slot for the call so that our team can call them
+
+
+
+
+
+
