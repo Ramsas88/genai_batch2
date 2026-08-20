@@ -7,13 +7,21 @@ from pydantic import BaseModel
 import json
 load_dotenv()
 
+# Documents folder - business knowledge
 documents = SimpleDirectoryReader("data").load_data()
 
-index = VectorStoreIndex.from_documents(documents) # vectors
+# Vectors
+index = VectorStoreIndex.from_documents(documents) 
 
+# LLM
 openai_llm = OpenAI(model="gpt-5.5")
 
+# Query Engine
 query_engine = index.as_query_engine( llm=openai_llm )
+
+# AI Response
+response = query_engine.query("Your prompt")
+
 
 app = FastAPI()
 
@@ -28,9 +36,10 @@ def llama_chat(req : Chatrequest):
 
     guide, qualify, suggest best suitable courses based on user profile and background.
 
-    if they want to talk to us, we are avaibale from 10am to 6pm IST
+    if they want to talk to us, we are avaibale from 10am to 6pm IST.
 
     Do not return data inside json mardown or code block.
+    alwatys return user response in english
     always return data in JSOn format only
 
     {{
