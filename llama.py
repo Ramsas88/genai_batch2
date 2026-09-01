@@ -9,25 +9,17 @@ load_dotenv()
 
 # Documents folder - business knowledge
 documents = SimpleDirectoryReader("data").load_data()
-
 # Vectors
 index = VectorStoreIndex.from_documents(documents) 
-
 # LLM
 openai_llm = OpenAI(model="gpt-5.5")
-
 # Query Engine
 query_engine = index.as_query_engine( llm=openai_llm )
-
 # AI Response
 response = query_engine.query("Your prompt")
-
-
 app = FastAPI()
-
 class Chatrequest(BaseModel):
     user_msg: str
-
 @app.post("/llama-chat")
 def llama_chat(req : Chatrequest):
     print(req)
